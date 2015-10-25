@@ -1,3 +1,7 @@
+/**
+ * Created by Tejas on 10/24/2015.
+ */
+
 // call customersApp.controller() method
 customersApp.controller('ordersController',function($scope,orderFactory,customerFactory,productFactory){ 
     // initialize an empty array so $scope.customers maintains a consistent data type 

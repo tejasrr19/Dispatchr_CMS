@@ -5,12 +5,9 @@
 		<h2>Welcome to Your Product Dashboard!</h2>
 			<h3>New Products</h3>
 			<div ng-repeat="product in products | orderBy: created_at | limitTo:4" class="col-md-3 item">
-				<img src="{{product.image}}">
+				<img src="images/{{product.image}}">
 				<div class="name"><a href="#/products/{{product._id}}">{{product.name}}</a></div>
-				<p>{{product.description}}</p>					
-				<form>
-					<input type="submit" value="Delete" class="btn btn-danger" ng-click="deleteProduct(product)">	
-				</form>
+				<p>{{product.description}}</p>
 			</div>
 		</div>
 	</div>

@@ -1,3 +1,6 @@
+/**
+ * Created by Tejas on 10/24/2015.
+ */
 // CLIENT FACTORY
 
 // call customersApp.factory() method - pass in $http so we can get/post
@@ -28,7 +31,7 @@ customersApp.factory('customerFactory', function($http){
         console.log('in customerFactory',newCustomer);
 
         $http.post('/customers/add',newCustomer).success(function(output){
-            console.log('added data in factory');
+            console.log('factory data added:');
             console.log(output);
             callback(output);
         });
@@ -42,7 +45,7 @@ customersApp.factory('customerFactory', function($http){
         // remove this customer (by value) from customers array
         // customers.splice(customers.indexOf(customer),1);
         $http.post('/customers/delete',customer).success(function(output){
-            console.log('deleted data in factory:', output);
+            console.log('factory data deleted:', output);
             callback(output);
         });
     };

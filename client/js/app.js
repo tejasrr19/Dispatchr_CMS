@@ -1,3 +1,7 @@
+/**
+ * Created by Tejas on 10/24/2015.
+ */
+
 var customersApp = angular.module('customersApp',['ngRoute']);
 
 // use the config method to set up Angular routes (not server routes for http.get or http.post):

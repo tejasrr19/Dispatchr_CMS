@@ -1,3 +1,6 @@
+/**
+ * Created by Tejas on 10/24/2015.
+ */
 customersApp.factory('orderFactory', function($http){
     // controller calls upon this factory - factory gets data from the server-side
     var orders = [];  

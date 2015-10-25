@@ -1,164 +1,171 @@
 /* resets the CSS browser default values for padding and margin */
 * {
-	padding:0;
-	margin:0;	
-	font-family:Arial, Helvetica, "Sans Serif";
-	outline:0px dotted red; /* dev only: outlines each element, but overlays, doesn't take up space like border */
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, "Sans Serif";
+    outline: 0px dotted red; /* dev only: outlines each element, but overlays, doesn't take up space like border */
 }
 
 body {
-	width:970px;
-	border:0px solid #000000;
-	padding:25px;
-	margin:0 auto;
-	font-size: .9em
+    width: 970px;
+    border: 0px solid #000000;
+    padding: 25px;
+    margin: 0 auto;
+    font-size: .9em
 }
 
-	div.wrapper {	
-		width:480px;
-		margin-top:25px;
-		margin:0 auto;
-	}
+div.wrapper {
+    width: 480px;
+    margin-top: 25px;
+    margin: 0 auto;
+}
 
-		h1 {
-			font-size: 1em;
-			margin-bottom: 20px
-		}
+.navbar{
+    background-image: none;
+}
 
-		h2, h3 {
-		margin:20px 0px 10px 0px;
-		}
+.navbar-default {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
 
-		p {
-			margin-bottom: 5px;
-		}
+h1 {
+    font-size: 1em;
+    margin-bottom: 20px
+}
 
-		.img {
-			display: inline-block;
-			margin-right:10px;
-			margin-right:10px;
-		}
+h2, h3 {
+    margin: 20px 0px 10px 0px;
+}
 
-		form {
-			display:inline-block;
-		}
+p {
+    margin-bottom: 5px;
+}
 
-			form.login fieldset, form.register fieldset {
-				padding:50px;
-				padding-bottom:40px;		
-				margin-bottom:25px;
-				border:1px solid #ccc;
-			}
+.img {
+    display: inline-block;
+    margin-right: 10px;
+    margin-right: 10px;
+}
 
-			form.user fieldset {
-				padding:25px 40px 30px 40px;
-			}
+form {
+    display: inline-block;
+}
 
-				label {
-					margin-bottom:10px;
-					min-height:15px;
-				}
+form.login fieldset, form.register fieldset {
+    padding: 50px;
+    padding-bottom: 40px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+}
 
-					label span {
-						display:inline-block;
-						width:150px;
-					}
+form.user fieldset {
+    padding: 25px 40px 30px 40px;
+}
 
-						label.button span {
-							width:356px;
-						}
+label {
+    margin-bottom: 10px;
+    min-height: 15px;
+}
 
-						input[type=text], select, option, textarea {	 
-						    font-size: .9em;
-						    padding:2px;
-						    -webkit-box-sizing: border-box;
-						    -moz-box-sizing: border-box;
-						    box-sizing: border-box; 
-						}
+label span {
+    display: inline-block;
+    width: 150px;
+}
 
-						input, select {
-						    width:225px;
-						    height:25px;
-						    border: 1px #ccc solid;
-						    vertical-align:top;
-						}
+label.button span {
+    width: 356px;
+}
 
-						textarea {
-							width:380px;
-							height:100px;
-						}
+input[type=text], select, option, textarea {
+    font-size: .9em;
+    padding: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
-						input[type="submit"] {	 
-							padding:5px;
-							background-color:#e1e1e1;
-							color:#000000;
-							font-weight:bold;
-							width:auto;
-							height:25px;
-							display:block;
-						}
+input, select {
+    width: 225px;
+    height: 25px;
+    border: 1px #ccc solid;
+    vertical-align: top;
+}
 
-						label.button{
-							text-align: right;
-						}
+textarea {
+    width: 380px;
+    height: 100px;
+}
 
-		div.errors {
-			color:red;
-			font-size:.8em;
-			margin:6px;
-			margin-left:154px;
-		}
+input[type="submit"] {
+    padding: 5px;
+    background-color: #e1e1e1;
+    color: #000000;
+    font-weight: bold;
+    width: auto;
+    height: 25px;
+    display: block;
+}
 
-		table {
-			margin-top:25px;
-			width:100%;
-			border-spacing: 0;
-			border:1px solid #000000;
-		}
+label.button {
+    text-align: right;
+}
 
-			th {
-				background-color: #e1e1e1;
-				padding:5px;
-			}
+div.errors {
+    color: red;
+    font-size: .8em;
+    margin: 6px;
+    margin-left: 154px;
+}
 
-				tr:last-child td {
-					border-bottom:0;
-				}
+table {
+    margin-top: 25px;
+    width: 100%;
+    border-spacing: 0;
+    border: 1px solid #000000;
+}
 
-				td {
-					padding:5px;
-					border-bottom:1px dotted #000000;
-				}
+th {
+    background-color: #e1e1e1;
+    padding: 5px;
+}
 
-				td.center {
-					text-align: center;
-				}
+tr:last-child td {
+    border-bottom: 0;
+}
 
-		input[type=submit]
-		{
-			float:right;			
-			width:70px;
-			margin-left:20px;
-			margin-right:0px;
-			border:1px solid #000000;
-		}
+td {
+    padding: 5px;
+    border-bottom: 1px dotted #000000;
+}
 
-		input[disabled]
-		{
-			float:right;			
-			width:70px;
-			margin-left:20px;
-			margin-right:0px;
-			border:1px solid #ccc;
-			color:#999999;
-		}
+td.center {
+    text-align: center;
+}
 
-		form{
-			margin-top: 25px;
-			width:100%;
-		}
+input[type=submit] {
+    float: right;
+    width: 70px;
+    margin-left: 20px;
+    margin-right: 0px;
+    border: 1px solid #000000;
+}
 
-		form fieldset {
-			padding:15px;
-			border:1px solid #000000;
-		}
+input[disabled] {
+    float: right;
+    width: 70px;
+    margin-left: 20px;
+    margin-right: 0px;
+    border: 1px solid #ccc;
+    color: #999999;
+}
+
+form {
+    margin-top: 25px;
+    width: 100%;
+}
+
+form fieldset {
+    padding: 15px;
+    border: 1px solid #000000;
+}

@@ -1,3 +1,7 @@
+/**
+ * Created by Tejas on 10/24/2015.
+ */
+
 // SERVER MODEL
 
 // We want to create a file that has the schema for our friends and creates a model that we can then call upon in our controller

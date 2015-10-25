@@ -1,3 +1,6 @@
+/**
+ * Created by Tejas on 10/24/2015.
+ */
 // call customersApp.controller() method
 customersApp.controller('productsController', function($scope,productFactory){ 
      $scope.newProduct = {}
