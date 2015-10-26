@@ -1,13 +1,13 @@
 
-## Dispatchr_CMS
+# Dispatchr_CMS
 
 A Basic Customer Management System using Node.js, Angular.js and MongoDB
 
-# Installation
+## Installation
 
 Requires Node.js, Angular.js and MongoDB to be installed.
 
-# Heroku
+## Heroku
 
 The App is depolyed on Heroku.
 
@@ -15,7 +15,7 @@ MongoLab is used to host the mongoDb service.
 
 <>
 
-# Local Usage
+## Local Usage
 
 Since Node is on the backend, server.js is the main file that acts as the server.
 
@@ -29,7 +29,7 @@ Then,
 
 Server will be listening on port 3030.
 
-# Reference
+## Reference
 
 https://www.codeschool.com/pluralsight-courses/building-angularjs-and-node-js-apps-with-the-mean-stack#
 
