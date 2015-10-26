@@ -3,7 +3,7 @@
 
 A Basic Customer Management System using Node.js, Angular.js and MongoDB
 
-## Installation
+## Requirements
 
 Requires Node.js and MongoDB to be installed. IDE used is JetBrain Webstorm.
 
@@ -27,7 +27,7 @@ Application link:  https://young-wildwood-3832.herokuapp.com/#/dashboard
 
 Since Node is on the backend, server.js is the main file that acts as the server.
 
-First set the environment to "production" if executing on localhost using the command
+First set the environment to "production" if executing on localhost using the command line on windows.
 
 <code>set NODE_ENV=production</code>
 
