@@ -5,7 +5,15 @@ A Basic Customer Management System using Node.js, Angular.js and MongoDB
 
 ## Installation
 
-Requires Node.js, Angular.js and MongoDB to be installed.
+Requires Node.js and MongoDB to be installed. IDE used is JetBrain Webstorm.
+
+https://nodejs.org/en/download/
+
+https://www.mongodb.org/downloads#production
+
+Angular.js can be installed using Bower or npm.
+
+https://github.com/angular/bower-angular
 
 ## Heroku
 
