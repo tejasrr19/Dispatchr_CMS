@@ -1,7 +1,7 @@
 
 # Dispatchr_CMS
 
-A Customer Management System using Node.js, Angular.js and MongoDB
+A Basic Customer Management System using Node.js, Angular.js and MongoDB
 
 # Installation
 
@@ -12,6 +12,8 @@ Requires Node.js, Angular.js and MongoDB to be installed.
 The App is depolyed on Heroku.
 
 MongoLab is used to host the mongoDb service.
+
+<>
 
 # Local Usage
 
