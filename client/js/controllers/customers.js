@@ -1,11 +1,9 @@
 /**
  * Created by Tejas on 10/24/2015.
  */
-// CLIENT CONTROLLER
-
-// call customersApp.controller() method
+//CUSTOMER CONTROLLER
 customersApp.controller('customersController',function($scope,customerFactory){  
-	// initialize an empty array so $scope.customers maintains a consistent data type 
+
 	$scope.customers = [];
 
 	customerFactory.getCustomers(function(data){
@@ -16,13 +14,13 @@ customersApp.controller('customersController',function($scope,customerFactory){
 	$scope.deleteCustomer = function(customer){
        customerFactory.deleteCustomer(customer, function(data){
        		console.log('deleted data in view controller',data);       		
-            // remove this customer from customers array that user sees (not reloading db data)            
+            // remove this customer from customers array that user sees
             $scope.customers.splice($scope.customers.indexOf(data),1);
        });
 	}
 
     $scope.addCustomer = function(newCustomer){           
-    	// run addCustomer() function and define a callback - what to do with the data;                             
+    	// run addCustomer() function
         customerFactory.addCustomer(newCustomer,function(data){
         	console.log('new data in view controller',data);
         	// add returned object(record) to customers scope
@@ -35,7 +33,7 @@ customersApp.controller('customersController',function($scope,customerFactory){
 
 		console.log('disabled?',$scope.isDisabled);
 
-		// loop through array of customer objects
+		// loop array of customer objects
 		for (var i=0; i<$scope.customers.length; i++)
 		{
 			console.log('name:',$scope.customers[i].name);
@@ -49,12 +47,12 @@ customersApp.controller('customersController',function($scope,customerFactory){
 
 		if(!duplicateCustomer)
 		{
-			// enable submit button  
+			// enable button
 			$scope.add.$invalid = false;	
 		}  
 		else
 		{
-			// disable submit button
+			// disable button
 			$scope.add.$invalid = true;
 		} 
 

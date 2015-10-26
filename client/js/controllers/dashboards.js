@@ -1,11 +1,10 @@
 /**
  * Created by Tejas on 10/24/2015.
  */
-// CLIENT CONTROLLER
+// DASHBOARD CONTROLLER
 
-// call customersApp.controller() method
 customersApp.controller('dashboardController',function($scope,customerFactory,orderFactory,productFactory){  
-	// initialize an empty array so $scope.customers maintains a consistent data type 
+
 	$scope.customers = [];
 	$scope.products = [];
 	$scope.orders = [];

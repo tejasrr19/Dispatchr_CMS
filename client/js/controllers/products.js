@@ -1,20 +1,15 @@
 /**
  * Created by Tejas on 10/24/2015.
  */
-// call customersApp.controller() method
+// PRODCUTS CONTROLLER
+
 customersApp.controller('productsController', function($scope,productFactory){ 
      $scope.newProduct = {}
 
     $scope.addFileName = function(files) {
-        // haven't gotten a real file upload working yet in angular...
-        // in the meantime, at least save filenames to the database
-        // console.log("select a file",files[0].name);
-
-        // save filename submitted to newProduct object
         $scope.newProduct.image = files[0].name;
      }
 
-    // initialize an empty array so $scope.customers maintains a consistent data type 
     $scope.products = [];
 
     productFactory.getProducts(function(data){
@@ -28,15 +23,9 @@ customersApp.controller('productsController', function($scope,productFactory){
     	if('_id' in newProduct)
     	{
     		console.log('existing product:',newProduct);
-
-    		// call factory method, passing in object to add
 	    	productFactory.editProduct(newProduct,function(data){
-	    		// when method is finished aading, anonymous callback saves received data to scope variable
 	    		console.log('edited product',data);
 	    		$scope.newProduct = [];
-	    		// (to fix: after running this function, even though the form is cleared out, adding a new product results in a blank db record.)
-	    		// how to update this product in products scope?
-	    		// $scope.findObjectByProperty($scope.products,data._id)	    		 
 			});
 			// run getProducts() again to display updated data
 			 productFactory.getProducts(function(data){
@@ -48,7 +37,6 @@ customersApp.controller('productsController', function($scope,productFactory){
     	{
     		// call factory method, passing in object to add
     		productFactory.addProduct(newProduct,function(data){
-	    		// when method is finished aading, anonymous callback saves received data to scope variable
 	    		$scope.products.push(data);
     		})    	
     	}    	
@@ -57,7 +45,6 @@ customersApp.controller('productsController', function($scope,productFactory){
     $scope.showProduct = function(product){
     	console.log('show product:',product._id);
     	// overwrite form inputs with data to edit
-    	// (because the factory will perform a get request, its ok for id to be a string; for posts, it needs to be a json object {id:product._id})
     	var id = product._id;
     	productFactory.showProduct(id, function(data){
     		$scope.newProduct = data;

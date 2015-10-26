@@ -2,9 +2,8 @@
  * Created by Tejas on 10/24/2015.
  */
 
-// call customersApp.controller() method
 customersApp.controller('ordersController',function($scope,orderFactory,customerFactory,productFactory){ 
-    // initialize an empty array so $scope.customers maintains a consistent data type 
+
     $scope.orders = [];
     $scope.customers = [];
     $scope.products = [];
@@ -14,11 +13,12 @@ customersApp.controller('ordersController',function($scope,orderFactory,customer
         $scope.orders = data;
     })
 
-    // get all customers (to output in select menu)
+    // get all customers
     customerFactory.getCustomers(function(data){
         $scope.customers = data;
     })
 
+    // get all products
     productFactory.getProducts(function(data){
         $scope.products = data;
     })
@@ -28,17 +28,13 @@ customersApp.controller('ordersController',function($scope,orderFactory,customer
             // display new date to users
             console.log('new order added in client controller',data);
             $scope.orders.push(data);
-            // if we want to update the quantity, need a product id to pass to this method
-            // productFactory.updateProductQty(product_id, function(data){
-            //     console.log('updated quantity');
-            // }
+
         });
     }
 
     $scope.deleteOrder = function(order) {
         orderFactory.deleteOrder(order, function(data){
             console.log('order deleted in client controller',data);
-            // $scope.orders.splice($scope.orders.indexOf(data),1);
             // get fresh data
             orderFactory.getOrders(function(data){
                 $scope.orders = data;

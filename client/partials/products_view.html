@@ -5,7 +5,7 @@
 			<form name="search" class="form">
 				<div class="form-group">
 					<h2>Search Items</h2>
-					<input type="text" class="form-control" placeholder="filter..." ng-model="product_name">
+					<input type="text" class="form-control" placeholder="Enter Keyword" ng-model="product_name">
 				</div>
 			</form>
 		</div>
@@ -39,17 +39,13 @@
 		</div>
 		<div class="col-md-9 products product">
 			<div ng-repeat="product in products | filter:product_name" 	class="col-md-4 item">
-
-				<img ng-hide="product.image.length === 0" src="images/{{product.image}}"><p>
 				<div ng-bind="product.name" class="name"></div>
-				<div ng-bind="product.description" class="description"></div>
+				<img ng-hide="product.image.length === 0" src="images/{{product.image}}" height="200" width="170"><p>
 				<div>
-					<p>{{product.description}}</p>
-				</div>
-
 				<form>
 					<input type="submit" value="Delete" class="btn btn-danger" ng-click="deleteProduct(product)">
 				</form>
+				</div>
 			</div>
 		</div>
 	</div>

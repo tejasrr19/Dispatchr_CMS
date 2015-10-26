@@ -2,14 +2,11 @@
  * Created by Tejas on 10/24/2015.
  */
 customersApp.factory('orderFactory', function($http){
-    // controller calls upon this factory - factory gets data from the server-side
     var orders = [];  
     var factory = {};
 
-    // return the object we defined
+
     factory.getOrders = function(callback){
-        // pass data to a callback to be used by whoever calls method
-        // (callback is for passing data from factory to controller)
         $http.get('/orders/show').success(function(output){
             callback(output);
         })
@@ -31,7 +28,5 @@ customersApp.factory('orderFactory', function($http){
             callback(output);
         })
     }
-
-    // return the object so it can be used
     return factory;
 })

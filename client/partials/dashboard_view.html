@@ -2,7 +2,8 @@
 <div ng-controller="dashboardController">
 	<div class="row">
 		<div class="col-md-12 products">
-		<h2>Welcome to Your Product Dashboard!</h2>
+		<h1 align="center">Dispatchr_CMS</h1>
+		<h3>A Customer Management System</h3>
 			<h3>New Products</h3>
 			<div ng-repeat="product in products | orderBy: created_at | limitTo:4" class="col-md-3 item">
 				<img src="images/{{product.image}}">
@@ -25,30 +26,9 @@
 			<ul>
 				<li ng-repeat='customer in customers | orderBy: created_at | limitTo:4'>{{customer.name}} joined the store on {{customer.created_at | date}}</li>
 			</ul>
-
-			<!-- <form name="search" class="form">
-				<div class="form-group">
-					<label for="filter">Search Customers:</label>
-					<input type="text" name="filter" class="form-control" placeholder="filter..." ng-model="customer_name">
-				</div>
-			</form> -->
-			
-			<!-- <table class="table table-striped">
-				<thead>
-					<tr>
-						<th data-field="customer">Customer Name</th>
-						<th data-field="created_at">Date</th>
-						<th class="right" data-field="action">Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat='customer in customers | filter:customer_name | orderBy: created_date'>
-						<td ng-bind='customer.name'></td>
-						<td ng-bind='customer.created_at | date'></td>
-						<td class="right"><form><input type="submit" value="Delete" class="btn btn-danger" ng-click="deleteCustomer(customer)"></form></td>						
-					</tr>
-				</tbody>
-			</table> -->
 		</div>
 	</div>
 </div>
+<footer>
+	<p>*Add new Customers, Orders or Items to view on Dashboard</p>
+</footer>

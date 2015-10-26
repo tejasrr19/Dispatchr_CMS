@@ -5,8 +5,7 @@
             <h2>Search Customers</h2>
             <form name="search" class="form">
                 <div class="form-group">
-
-                    <input type="text" name="filter" class="form-control" placeholder="filter..." ng-model="customer_name">
+                    <input type="text" name="filter" class="form-control" placeholder="Enter Keyword" ng-model="customer_name">
                 </div>
             </form>
 
@@ -26,7 +25,6 @@
                     <td ng-bind='customer.address'></td>
                     <td ng-bind='customer.created_at | date'></td>
                     <td class="right"><form><input type="submit" value="Delete" class="btn btn-danger" ng-click="deleteCustomer(customer)"></form></td>
-                    <td class="right"><form><input type="submit" value="Edit" class="btn btn-success" ng-click="editCustomer(customer)"></form></td>
                 </tr>
                 </tbody>
             </table>

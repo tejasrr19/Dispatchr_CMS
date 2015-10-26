@@ -2,9 +2,6 @@
  * Created by Tejas on 10/24/2015.
  */
 // CLIENT FACTORY
-
-// call customersApp.factory() method - pass in $http so we can get/post
-// (fyi: we only really need a factory if we're working with a db...)
 customersApp.factory('customerFactory', function($http){
 	// controller calls upon this factory - factory gets data from the server-side
 	var factory = {};
@@ -13,7 +10,7 @@ customersApp.factory('customerFactory', function($http){
 	// return the object we defined
 	factory.getCustomers = function(callback){
 		// pass data to a callback to be used by whoever calls method
-		// (callback is for passing data from factory to controller)
+		// callback is for passing data from factory to controller
         $http.get('/customers/show').success(function(output){
             // set customers to db output
             console.log(output);
@@ -24,8 +21,8 @@ customersApp.factory('customerFactory', function($http){
 	};
 
     factory.addCustomer = function(newCustomer,callback){                                        
-        // add created_date to newCustomer object (customer:[customer name])
-        // (need to pretty this date up)
+        // add created_date to newCustomer object
+
         newCustomer.created_at = new Date();    
 
         console.log('in customerFactory',newCustomer);
@@ -35,15 +32,11 @@ customersApp.factory('customerFactory', function($http){
             console.log(output);
             callback(output);
         });
-    
-        // empty form field
-        newCustomer = [];    
     };
 
     // return method data from factory
     factory.deleteCustomer = function(customer,callback){
         // remove this customer (by value) from customers array
-        // customers.splice(customers.indexOf(customer),1);
         $http.post('/customers/delete',customer).success(function(output){
             console.log('factory data deleted:', output);
             callback(output);

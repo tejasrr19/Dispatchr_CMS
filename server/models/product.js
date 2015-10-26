@@ -2,12 +2,10 @@
  * Created by Tejas on 10/24/2015.
  */
 
-// SERVER MODEL
+// PRODUCT MODEL
 
-// We want to create a file that has the schema and creates a model that we can then call upon in our controller
 var mongoose = require('mongoose');
 
-// create our friendSchema
 var ProductSchema = new mongoose.Schema({
 	name:String,
 	image:String,
@@ -15,7 +13,4 @@ var ProductSchema = new mongoose.Schema({
 	description:String,
 	created_at: {type:Date, default: Date.now}
 });
-
-// compile a 'Product' model using the ProductSchema as the structure
-// (creating a model CREATES the collection in the database (makes the collection plural))
 mongoose.model('Product',ProductSchema);
