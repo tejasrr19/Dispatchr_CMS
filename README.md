@@ -29,3 +29,15 @@ Then,
 
 Server will be listening on port 3030.
 
+# Reference
+
+https://www.codeschool.com/pluralsight-courses/building-angularjs-and-node-js-apps-with-the-mean-stack#
+
+https://docs.mongodb.org/manual/tutorial/
+
+https://docs.angularjs.org/api
+
+https://nodejs.org/en/docs/
+
+
+
