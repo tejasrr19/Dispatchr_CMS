@@ -21,7 +21,7 @@ The App is depolyed on Heroku.
 
 MongoLab is used to host the mongoDb service.
 
-https://young-wildwood-3832.herokuapp.com/#/dashboard
+Application link:  https://young-wildwood-3832.herokuapp.com/#/dashboard
 
 ## Local Usage
 
