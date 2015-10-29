@@ -27,9 +27,9 @@ Application link:  https://young-wildwood-3832.herokuapp.com/#/dashboard
 
 Since Node is on the backend, server.js is the main file that acts as the server.
 
-First set the environment to "production" if executing on localhost using the command line on windows.
+First set the environment to "development" if executing on localhost using the command line on windows.
 
-<code>set NODE_ENV=production</code>
+<code>set NODE_ENV=development</code>
 
 Then,
 
