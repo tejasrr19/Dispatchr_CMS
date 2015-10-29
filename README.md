@@ -47,5 +47,12 @@ https://docs.angularjs.org/api
 
 https://nodejs.org/en/docs/
 
+## Improvements
+
+-Added Customer edit functionality.
+
+
+
+
 
 
