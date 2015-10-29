@@ -54,6 +54,23 @@ module.exports = (function(){
 					response.json(results);
 				}
 			})
+		},
+		edit: function(request,response){
+			console.log("Hello I am:"+request.body._id);
+			Customer.findByIdAndUpdate(request.body._id, {$set:{
+					name:request.body.name,
+					address:request.body.address}},
+				function(error,results){
+					if(error){
+						console.log('customer.edit() error (in server controller)',error);
+						response.json(error);
+					}
+					else
+					{
+						console.log('customer.edit() results (in server controller)',results);
+						response.json('results');
+					}
+				})
 		}
 	}
 })();

@@ -43,6 +43,15 @@ customersApp.factory('customerFactory', function($http){
         });
     };
 
+    //return method data from factory
+    factory.editCustomer = function(customer, callback){
+        console.log(customer);
+        $http.post('/customers/edit',customer).success(function(output){
+            console.log('factory data edited:',output);
+            callback(output);
+        })
+    }
+
 	// return the object so it can be used
 	return factory;
 })

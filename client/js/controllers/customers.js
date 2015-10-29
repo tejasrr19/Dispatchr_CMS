@@ -8,7 +8,7 @@ customersApp.controller('customersController',function($scope,customerFactory){
 
 	customerFactory.getCustomers(function(data){
 		$scope.customers = data;
-	})
+	});
 
 	// pass customer to factory deleteCustomer() function
 	$scope.deleteCustomer = function(customer){
@@ -17,7 +17,7 @@ customersApp.controller('customersController',function($scope,customerFactory){
             // remove this customer from customers array that user sees
             $scope.customers.splice($scope.customers.indexOf(data),1);
        });
-	}
+	};
 
     $scope.addCustomer = function(newCustomer){           
     	// run addCustomer() function
@@ -26,7 +26,15 @@ customersApp.controller('customersController',function($scope,customerFactory){
         	// add returned object(record) to customers scope
         	$scope.customers.push(data);
         });   
-    }			
+    };
+
+    $scope.editCustomer = function(customer){
+        customerFactory.editCustomer(customer, function(data){
+
+            console.log('edited data in view controller',data);
+            $scope.newCustomer=data;
+        });
+    };
 
 	$scope.validateCustomer = function(newCustomer){
 		var duplicateCustomer = 0;
@@ -58,4 +66,4 @@ customersApp.controller('customersController',function($scope,customerFactory){
 
 		return $scope.isDisabled;
 	}
-})
+});

@@ -35,6 +35,7 @@ module.exports = function(app) {
 		products.add(request,response);
 	})
 
+
 	// run products show() function in server controller
 	app.get('/products/show',function(request,response){
 		products.show(request,response);
@@ -67,6 +68,11 @@ module.exports = function(app) {
 	app.post('/customers/add',function(request,response){
 		console.log('value to add in server js:',request.body.name);
 		customers.add(request,response);
+	})
+
+	app.post('/customers/edit', function(request,response){
+		console.log('edited',request.body);
+		customers.edit(request,response);
 	})
 
 	// run customer.show() function in server controller
