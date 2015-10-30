@@ -7,6 +7,13 @@ var customersApp = angular.module('customersApp',['ngRoute']);
 // use the config method to set up Angular routes (not server routes for http.get or http.post):
 customersApp.config(function ($routeProvider) {
   $routeProvider
+      .when('/login',{
+          templateUrl:'partials/login_view.html'
+      })
+      .when('/register',{
+          templateUrl:'partials/register_view.html',
+          controller: 'registerController'
+      })
     .when('/customers',{
         templateUrl: 'partials/customers_view.html'
     })
