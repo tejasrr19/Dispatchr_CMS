@@ -3,9 +3,10 @@
  */
 
 customersApp.controller('registerController', function($scope, $http, $location, registerFactory) {
-        console.log("Im here");
 
-        if($scope.user.name===null)
+
+
+        if($scope.user.name===null|| $scope.user.password ===null|| $scope.user.username===null)
         {
             alert("Enter the First Name");
         }
@@ -16,6 +17,7 @@ customersApp.controller('registerController', function($scope, $http, $location,
                     console.log('new data in view controller', data);
                 })
             }
+
         }
 
 });
