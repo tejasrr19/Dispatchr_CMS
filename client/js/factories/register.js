@@ -3,6 +3,9 @@
  */
 
 customersApp.factory('registerFactory', function($http){
+
+    var factory={};
+
     factory.register = function(newUser,callback){
         // add created_date to newCustomer object
 
@@ -13,4 +16,5 @@ customersApp.factory('registerFactory', function($http){
             callback(output);
         });
     };
+    return factory;
 });
