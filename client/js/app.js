@@ -11,8 +11,7 @@ customersApp.config(function ($routeProvider) {
           templateUrl:'partials/login_view.html'
       })
       .when('/register',{
-          templateUrl:'partials/register_view.html',
-          controller: 'registerController'
+          templateUrl:'partials/register_view.html'
       })
     .when('/customers',{
         templateUrl: 'partials/customers_view.html'
