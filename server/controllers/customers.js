@@ -55,6 +55,22 @@ module.exports = (function(){
 				}
 			})
 		},
+
+		register: function(request,response) {
+			console.log('register:', request.body);
+
+			var user = new User(request.body)
+			user.save(function(err, newUser) {
+				if(err) {
+					console.log('Error:', err);
+					return response.json({ bSuccess: false });
+				}
+
+				response.json({ bSuccess: true, user: newUser});
+
+			});
+		},
+
 		edit: function(request,response){
 			console.log("Hello I am:"+request.body._id);
 			User.findByIdAndUpdate(request.body._id, {$set:{

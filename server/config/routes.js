@@ -74,6 +74,11 @@ module.exports = function(app) {
 		customers.add(request,response);
 	})
 
+	app.post('/customer/register', function(request, response) {
+		console.log('register customer');
+		customers.register(request, response);
+	})
+
 	app.post('/customers/edit', function(request,response){
 		console.log('edited',request.body);
 		customers.edit(request,response);
