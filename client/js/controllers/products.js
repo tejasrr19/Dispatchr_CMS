@@ -13,6 +13,7 @@ customersApp.controller('productsController', function($scope,productFactory){
     $scope.products = [];
 
     productFactory.getProducts(function(data){
+
     	$scope.products = data;
     })
 
