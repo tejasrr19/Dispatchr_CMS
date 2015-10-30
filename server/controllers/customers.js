@@ -7,7 +7,7 @@
 var mongoose = require('mongoose');
 
 // require customer model
-var Customer = mongoose.model('Customer');
+var User = mongoose.model('User');
 
 // set database functions (runs as immediate function)
 module.exports = (function(){
@@ -16,7 +16,7 @@ module.exports = (function(){
 			console.log(request.body);
 			// run find all query, then execute anonymous call back function
 			// (callback let's server controller know that its job is done, so it can callback its caller)
-			Customer.find({}, function(error,results){
+			User.find({}, function(error,results){
 				if(error) {
 					console.log('database error occurred',error);
 				}
@@ -29,22 +29,22 @@ module.exports = (function(){
 			})
 		},
 		add: function(request,response){
-			console.log('customers server controller',request.body.name);
-			var newCustomer = new Customer({name:request.body.name, address:request.body.address, created_at:request.body.created_at});
+			console.log('user server controller',request.body);
+			var newUser = new User(request.body);
 			// run save query then execute anonymous call back function
-			newCustomer.save(function(error){
+			newUser.save(function(error){
 				if(error){
 					console.log('database error occurred during insert',error);
 					response.json('error');
 				}
 				else{
-					console.log('added  in server controller',newCustomer);
-					response.json(newCustomer);
+					console.log('added  in server controller',newUser);
+					response.json(newUser);
 				}
 			})
 		},
 		delete: function(request,response){ 
-			Customer.findByIdAndRemove(request.body._id, function(error,results){
+			User.findByIdAndRemove(request.body._id, function(error,results){
 				if(error){
 					console.log('database error occurred during delete',error);
 					response.json('error');
@@ -57,7 +57,7 @@ module.exports = (function(){
 		},
 		edit: function(request,response){
 			console.log("Hello I am:"+request.body._id);
-			Customer.findByIdAndUpdate(request.body._id, {$set:{
+			User.findByIdAndUpdate(request.body._id, {$set:{
 					name:request.body.name,
 					address:request.body.address}},
 				function(error,results){
