@@ -30,7 +30,15 @@ customersApp.controller('ordersController',function($scope,orderFactory,customer
             $scope.orders.push(data);
 
         });
-    }
+    };
+
+    $scope.editOrder = function(order){
+        orderFactory.editOrder(order, function(data){
+
+            console.log('edited data in view controller',data);
+            $scope.newOrder=data;
+        });
+    };
 
     $scope.deleteOrder = function(order) {
         orderFactory.deleteOrder(order, function(data){

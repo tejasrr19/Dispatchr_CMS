@@ -19,8 +19,16 @@ customersApp.factory('orderFactory', function($http){
             console.log('new order added in client factory',output);
             console.log(output);
             callback(output);
-        })
-    }
+        });
+    };
+
+    factory.editOrder = function(order, callback){
+        console.log(order);
+        $http.post('/orders/edit',order).success(function(output){
+            console.log('factory data edited:',output);
+            callback(output);
+        });
+    };
 
     factory.deleteOrder = function(order,callback){
         $http.post('/orders/delete',order).success(function(output){

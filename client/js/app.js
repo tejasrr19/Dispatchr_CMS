@@ -7,7 +7,7 @@ var customersApp = angular.module('customersApp',['ngRoute']);
 // use the config method to set up Angular routes (not server routes for http.get or http.post):
 customersApp.config(function ($routeProvider) {
   $routeProvider
-    .when('/',{
+    .when('/customers',{
         templateUrl: 'partials/customers_view.html'
     })
     .when('/orders',{
@@ -23,6 +23,6 @@ customersApp.config(function ($routeProvider) {
         templateUrl: 'partials/dashboard_view.html'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/dashboard'
     });
 });   

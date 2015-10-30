@@ -52,6 +52,10 @@ module.exports = function(app) {
 		orders.delete(request,response);
 	})
 
+	app.post('/orders/edit', function(request,response){
+		console.log('edited',request.body);
+		orders.edit(request,response);
+	})
 	// run orders add() function in server controller
 	app.post('/orders/add',function(request,response){
 		console.log('value to add in server js:',request.body.name);
