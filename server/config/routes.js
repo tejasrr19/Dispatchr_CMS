@@ -74,7 +74,7 @@ module.exports = function(app) {
 		customers.add(request,response);
 	})
 
-	app.post('/customer/register', function(request, response) {
+	app.post('/customers/register', function(request, response) {
 		console.log('register customer');
 		customers.register(request, response);
 	})

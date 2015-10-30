@@ -66,6 +66,9 @@ module.exports = (function(){
 					return response.json({ bSuccess: false });
 				}
 
+				newUser.password = null;
+				delete newUser.password;
+
 				response.json({ bSuccess: true, user: newUser});
 
 			});
