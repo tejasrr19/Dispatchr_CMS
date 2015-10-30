@@ -19,7 +19,10 @@
                 <thead>
                 <tr>
                     <th data-field="customer">Customer Name</th>
-                    <th data-field="address">Address</th>
+                    <th data-field="street">Street</th>
+                    <th data-field="city">City</th>
+                    <th data-field="state">State</th>
+                    <th data-field="zipcode">Zipcode</th>
                     <th data-field="created_at">Date</th>
                     <th class="right" data-field="delete">Delete</th>
                     <th class="right" data-field="edit">Edit</th>
@@ -28,7 +31,10 @@
                 <tbody>
                 <tr ng-repeat='customer in customers | filter:customer_name | orderBy: created_date'>
                     <td ng-bind='customer.name'></td>
-                    <td ng-bind='customer.address'></td>
+                    <td ng-bind='customer.address.street'></td>
+                    <td ng-bind='customer.address.city'></td>
+                    <td ng-bind='customer.address.state'></td>
+                    <td ng-bind='customer.address.zipcode'></td>
                     <td ng-bind='customer.created_at | date'></td>
                     <td class="right">
                         <form><input type="submit" value="Delete" class="btn btn-danger"
@@ -42,11 +48,23 @@
                         <div>
                             <form ng-show="editing" ng-submit="editing = false">
                                 <label>Name:</label>
-                                <input type="text" ng-model="customer.name" placeholder="Name" ng-required/>
+                                <input type="text" ng-model="customer.name" placeholder="Name" />
                                 </br>
-                                <label>Address:</label>
-                                <input type="text" ng-model="customer.address" placeholder="Address" ng-required/>
+                                <label>Street:</label>
+                                <input type="text" ng-model="customer.address.street" placeholder="Stret" />
                                 </br>
+                                <label>City:</label>
+                                <input type="text" ng-model="customer.address.city" placeholder="City" />
+                                </br>
+                                <label>State:</label>
+                                <input type="text" ng-model="customer.address.state" placeholder="State" />
+                                </br>
+                                <label>Zipcode:</label>
+                                <input type="text" ng-model="customer.address.zipcode" placeholder="Zipcode" />
+                                </br>
+
+
+
                                 <input class="btn" type="submit" value="Save" ng-click="editCustomer(customer)">
                             </form>
                         </div>
@@ -59,15 +77,33 @@
             <!--To add a new Customer-->
             <h2>Add a New Customer</h2>
 
-            <form name="add" class="form" novalidate id="edit">
-                <div class="form-group">
-                    <label for="customer">Customer Name:</label>
-                    <input type="text" name="name" class="form-control" ng-model='newCustomer.name'>
-                    <label for="customer">Customer Address:</label>
-                    <input type="text" name="name" class="form-control" ng-model='newCustomer.address'>
-                    <input type="submit" name="Add" class="btn btn-primary" ng-disabled="add.$invalid"
-                           ng-click="addCustomer(newCustomer)">
-                </div>
+            <form class="form">
+                <label>Username:</label>
+                <input type="text" ng-model="user.username" class="form-control" placeholder="Username" ng-required/>
+                </br>
+                <label>Password:</label>
+                <input type="password" ng-model="user.password" class="form-control" placeholder="Password" ng-required/>
+                </br>
+                <label>First Name:</label>
+                <input type="text" ng-model="user.name" class="form-control" placeholder="Firstname" ng-required/>
+                </br>
+                <!--<label>Last Name:</label>
+                <input type="text" ng-model="user.lastname" class="form-control" placeholder="Lastname" ng-required/>
+                </br>
+                -->
+                <label>Street:</label>
+                <input type="text" ng-model="user.address.street" class="form-control" placeholder="Street" ng-required/>
+                </br>
+                <label>City:</label>
+                <input type="text" ng-model="user.address.city" class="form-control" placeholder="City" ng-required/>
+                </br>
+                <label>State:</label>
+                <input type="text" ng-model="user.address.state" class="form-control" placeholder="State" ng-required/>
+                </br>
+                <label>Zip Code:</label>
+                <input type="text" ng-model="user.address.zipcode" class="form-control" placeholder="Zip Code" ng-required/>
+                </br>
+                <input class="btn" type="submit" value="Register" ng-click="addCustomer(user)">
             </form>
         </div>
     </div>

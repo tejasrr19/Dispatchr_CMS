@@ -24,7 +24,7 @@ customersApp.controller('customersController',function($scope,customerFactory){
         customerFactory.addCustomer(newCustomer,function(data){
         	console.log('new data in view controller',data);
         	// add returned object(record) to customers scope
-        	$scope.customers.push(data);
+        	$scope.customers.push(data.user);
         });   
     };
 

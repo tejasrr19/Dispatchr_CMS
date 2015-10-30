@@ -23,11 +23,9 @@ customersApp.factory('customerFactory', function($http){
     factory.addCustomer = function(newCustomer,callback){                                        
         // add created_date to newCustomer object
 
-        newCustomer.created_at = new Date();    
-
         console.log('in customerFactory',newCustomer);
 
-        $http.post('/customers/add',newCustomer).success(function(output){
+        $http.post('/customers/register',newCustomer).success(function(output){
             console.log('factory data added:');
             console.log(output);
             callback(output);
