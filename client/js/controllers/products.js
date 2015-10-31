@@ -1,7 +1,7 @@
 /**
  * Created by Tejas on 10/24/2015.
  */
-// PRODCUTS CONTROLLER
+// PRODUCTS CONTROLLER
 
 customersApp.controller('productsController', function($scope,productFactory){ 
      $scope.newProduct = {}

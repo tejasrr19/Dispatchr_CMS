@@ -11,8 +11,54 @@
 		</div>
 	</div>
 
+
+
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th data-field="name">Product Name</th>
+			<th data-field="price">Price</th>
+			<th data-field="description">Description</th>
+			<th class="right" data-field="delete">Delete</th>
+			<th class="right" data-field="edit">Edit</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat='product in products '>
+			<td ng-bind='product.name'></td>
+			<td ng-bind='product.price'></td>
+			<td ng-bind='product.description'></td>
+			<td class="right">
+				<form><input type="submit" value="Delete" class="btn btn-danger"
+							 ng-click="deleteProduct(product)"></form>
+			</td>
+			<td class="right">
+
+				<input type="submit" class="btn btn-success" ng-hide="editing" ng-click="editing = true"
+					   value="Edit">
+
+				<div>
+					<form ng-show="editing" ng-submit="editing = false">
+						<label>Name:</label>
+						<input type="text" ng-model="product.name" placeholder="Name" />
+						</br>
+						<label>Price:</label>
+						<input type="text" ng-model="product.price" placeholder="Price" />
+						</br>
+						<label>Description:</label>
+						<input type="text" ng-model="product.description" placeholder="Description" />
+						</br>
+						<input class="btn" type="submit" value="Save" ng-click="editProduct(product)">
+					</form>
+				</div>
+
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
 	<div class="row">
-		<div class="col-md-12">			
+		<div class="col-md-12">
 			<h2>Add a New Item</h2>
 		</div>
 	</div>
@@ -24,26 +70,16 @@
 					<input type="text" class="form-control" ng-model="newProduct.name" placeholder="Enter Item Name" required>
 				</div>
 				<div class="form-group">
-					<input type="number" step="any"class="form-control" ng-model="newProduct.price" placeholder="Enter Item Price" required>
+					<input type="text"  class="form-control" ng-model="newProduct.price" placeholder="Enter Item Price" required>
 				</div>
 				<div class="form-group">
 					<textarea class="form-control" ng-model="newProduct.description" placeholder="Enter Description"></textarea>
 				</div>
 				<div class="form-group">
-					<input type="submit" name="Add" class="btn btn-primary" ng-click="addProduct(newProduct)" ng-disabled="add_product.$invalid">					
+					<input type="submit" name="Add" class="btn btn-primary" ng-click="addProduct(newProduct)">
 				</div>
 			</form>
 		</div>
-		<div class="col-md-9 products product">
-			<!-- <div ng-repeat="product in products | filter:product_name" 	class="col-md-4 item">
-				<div ng-bind="product.name" class="name"></div>
-				<img ng-hide="product.image.length === 0" ng-src="images/{{product.image}}" height="200" width="170"><p>
-				<div>
-				<form>
-					<input type="submit" value="Delete" class="btn btn-danger" ng-click="deleteProduct(product)">
-				</form>
-				</div>
-			</div> -->
-		</div>
+
 	</div>
 </div>
