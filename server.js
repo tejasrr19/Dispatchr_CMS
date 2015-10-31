@@ -3,6 +3,9 @@
  */
 var express = require('express');
 var path = require('path');
+var redis = require('redis');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 var app = express();
 var bodyParser = require('body-parser');
 

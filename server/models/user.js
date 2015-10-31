@@ -22,7 +22,7 @@ var UserSchema = new mongoose.Schema({
  	  	zipcode: { type: String } 
    	},
 
-   	role: { type: String, enum: enumRoles },
+   	role: { type: String, enum: enumRoles, default: 'customer' },
 
    	orders: [ 
   		{ 
