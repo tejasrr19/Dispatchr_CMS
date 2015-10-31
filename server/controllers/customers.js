@@ -85,6 +85,8 @@ module.exports = (function(){
 			console.log('register:', request.body);
 
 			var user = new User(request.body)
+			
+			if(request.body.admin) user.role = 'admin'
 
 			user.password = hashPassword(user.password);
 			
