@@ -1,11 +1,11 @@
-<div>
+<div ng-controller='loginController'>
     <form>
         <label>Username:</label>
-        <input type="text" ng-model="user.username" placeholder="Username" ng-required/>
+        <input type="text" ng-model="username" placeholder="Username" ng-required/>
         </br>
         <label>Password:</label>
-        <input type="password" ng-model="user.address" placeholder="Password" ng-required/>
+        <input type="password" ng-model="password" placeholder="Password" ng-required/>
         </br>
-        <input class="btn" type="submit" value="Login" ng-click="">
+        <input class="btn" type="submit" value="Login" ng-click="login(username, password)">
     </form>
 </div>

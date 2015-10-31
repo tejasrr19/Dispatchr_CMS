@@ -5,9 +5,15 @@
 
 // require mongoose
 var mongoose = require('mongoose');
-
+var crypto = require('crypto');
 // require customer model
 var User = mongoose.model('User');
+
+var hashPassword = function(rawPassword) {
+	var hasher = crypto.createHash('sha512');
+	return hasher.update(rawPassword).digest('hex');	
+}
+
 
 // set database functions (runs as immediate function)
 module.exports = (function(){
@@ -56,10 +62,32 @@ module.exports = (function(){
 			})
 		},
 
+		login: function(req, res) {
+
+			var hashedPassword = hashPassword(req.body.password);
+
+			User.find({ username: req.body.username, password: hashedPassword }, function(err, users) {
+
+				// error checking here
+				if(err || !users.length) {
+					console.log('Error logging in:', err, users);
+					return res.send({bSuccess: false, bMessage: 'Login unsuccessful'});
+				}
+
+				var user = users[0];
+				req.session.userID = user._id;
+				res.send({ bSuccess: true, bMessage: 'Login successful', bAdmin: user.admin, sUsername: user.username });
+
+			});
+		},
+
 		register: function(request,response) {
 			console.log('register:', request.body);
 
 			var user = new User(request.body)
+
+			user.password = hashPassword(user.password);
+			
 			user.save(function(err, newUser) {
 				if(err) {
 					console.log('Error:', err);

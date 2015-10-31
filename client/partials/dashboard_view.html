@@ -7,7 +7,6 @@
 			<h3>New Items Added Recently</h3>
 
 			<div ng-repeat="product in products | orderBy: created_at | limitTo:4" class="col-md-3 item">
-				<img src="images/{{product.image}}">
 				<div class="name"><a href="#/products/{{product._id}}">{{product.name}}</a></div>
 				<p>{{product.description}}</p>
 			</div>
@@ -21,14 +20,14 @@
 			</ul>
 		</div>
 	</div>
-	<div class="row">
+<!-- 	<div class="row">
 		<div class="col-md-12">
 			<h3>New Customers</h3>
 			<ul>
 				<li ng-repeat='customer in customers | orderBy: created_at | limitTo:4'>{{customer.name}} joined the store on {{customer.created_at | date}}</li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 </div>
 <footer>
 	<p>*Add new Customers, Orders or Items to view on Dashboard</p>

@@ -1,34 +1,15 @@
 /**
  * Created by Tejas on 10/30/2015.
  */
-customersApp.controller('loginController',
-    ['$scope', '$location', 'AuthService',
-        function ($scope, $location, AuthService) {
+customersApp.controller('loginController', ['$http','$scope', '$location',
+    function ($http,$scope, $location) {
 
-            console.log(AuthService.getUserStatus());
-
-            $scope.login = function () {
-
-                // initial values
-                $scope.error = false;
-                $scope.disabled = true;
-
-                // call login from service
-                AuthService.login($scope.loginForm.username, $scope.loginForm.password)
-                    // handle success
-                    .then(function () {
-                        $location.path('/');
-                        $scope.disabled = false;
-                        $scope.loginForm = {};
-                    })
-                    // handle error
-                    .catch(function () {
-                        $scope.error = true;
-                        $scope.errorMessage = "Invalid username and/or password";
-                        $scope.disabled = false;
-                        $scope.loginForm = {};
-                    });
-
-            };
-
-        }]);
+        console.log('loginController')
+        $scope.login = function(username, password){
+            console.log(username, password);
+            $http.post('/customers/login', { username: username, password: password }).then(function(data) {
+                console.log('logged in:', data);
+                $location.path('/dashboard');
+            });
+        }
+}]);

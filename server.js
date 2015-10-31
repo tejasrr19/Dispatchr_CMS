@@ -12,7 +12,18 @@ var bodyParser = require('body-parser');
 // mongoose
 var config_mongoose = require('./server/config/mongoose');
 
+app.use(session({
+	store: new RedisStore({
+		host: 'localhost',
+		port: 3679,
+		client: redis.createClient()
+	}),
+	secret: 'supersecretkey',
+	saveUninitialized: true,
+	resave: true
+}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // set path to static folder
 app.use(express.static(path.join(__dirname,'./client')));
