@@ -59,13 +59,7 @@ module.exports = (function(){
 		add: function(request,response){
 			console.log('here3');
 			// create a new instance of model, saving object to it
-			var newProduct = new Product({
-				name:request.body.name,
-				image:request.body.image,
-				description:request.body.description,
-				inventory:request.body.inventory,
-				created_at:request.body.created_at
-			});
+			var newProduct = new Product(request.body);
 
 			// run save method and callback with new record added
 			newProduct.save(function(error){
@@ -83,9 +77,8 @@ module.exports = (function(){
 		edit: function(request,response){
 			Product.findByIdAndUpdate(request.body._id, {$set:{
 				name:request.body.name,
-				image:request.body.image,
 				description:request.body.description,
-				inventory:request.body.inventory}},
+				price:request.body.price}},
 			function(error,results){
 				if(error){
 					console.log('product.edit() error (in server controller)',error);

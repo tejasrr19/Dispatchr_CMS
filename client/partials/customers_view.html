@@ -103,6 +103,8 @@
                 <label>Zip Code:</label>
                 <input type="text" ng-model="user.address.zipcode" class="form-control" placeholder="Zip Code" ng-required/>
                 </br>
+                <label><input type="checkbox" value="" ng-model="user.admin">Admin</label>
+                </br>
                 <input class="btn" type="submit" value="Register" ng-click="addCustomer(user)">
             </form>
         </div>

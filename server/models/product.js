@@ -8,8 +8,7 @@ var mongoose = require('mongoose');
 
 var ProductSchema = new mongoose.Schema({
 	name:String,
-	image:String,
-	inventory:Number,
+	price:Number,
 	description:String,
 	created_at: {type:Date, default: Date.now}
 });
